@@ -1,11 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mrbouquet.cc</title>
-</head>
-<body>
-    <h1>Work In Progress</h1>
-</body>
+    <style>
+      :root {
+        --bg-color: #faf8f5;
+        --card-bg: #ffffff;
+        --text-color: #2b2b2b;
+        --text-muted: #666666;
+        --accent-color: #d4a373;
+        --border-color: rgba(0, 0, 0, 0.06);
+        --font-main: "Helvetica Neue", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: var(--font-main);
+        line-height: 1.6;
+        padding: 4rem 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 700px;
+        width: 100%;
+      }
+
+      /* Profile Header */
+      .profile-card {
+        background: var(--card-bg);
+        padding: 3rem;
+        border-radius: 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        text-align: center;
+        margin-bottom: 2rem;
+        border: 1px solid var(--border-color);
+      }
+
+      .profile-emoji {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.5px;
+      }
+
+      .domain {
+        font-size: 1rem;
+        color: var(--accent-color);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .bio {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background: var(--bg-color);
+        color: var(--text-color);
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        border: 1px solid var(--border-color);
+      }
+
+      .btn:hover {
+        background: var(--text-color);
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      /* Projects Section */
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 3rem 0 1.5rem 0;
+        position: relative;
+        padding-left: 1rem;
+      }
+
+      .section-title::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 20%;
+        height: 60%;
+        width: 4px;
+        background-color: var(--accent-color);
+        border-radius: 2px;
+      }
+
+      .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .project-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+        border: 1px solid var(--border-color);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      .project-link-icon {
+        color: var(--accent-color);
+        font-size: 1.1rem;
+      }
+
+      .project-desc {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+
+      .project-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .tag {
+        background: var(--bg-color);
+        padding: 0.2rem 0.6rem;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--text-muted);
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 4rem;
+        font-size: 0.85rem;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="profile-card">
+        <div class="profile-emoji">🍩</div>
+        <h1>Mr_bouquet</h1>
+        <div class="domain">mrbouquet.cc</div>
+        <p class="bio">
+          Hello I'm Mr_bouquet I make small simple projects from GTA V Mods to
+          Simple Website tools explore my projects below.
+        </p>
+      </header>
+
+      <main>
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+          <!-- Trevor Tidy Mod -->
+          <a
+            href="https://github.com"
+            class="project-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-header">
+              <div class="project-title">Trevor Tidy</div>
+              <span class="project-link-icon">→</span>
+            </div>
+            <p class="project-desc">
+              A ScriptHookV mod for Grand Theft Auto V that makes it so trevors
+              trailer is always in the clean state.
+            </p>
+            <div class="project-tags">
+              <span class="tag">C++</span>
+              <span class="tag">ScriptHookV</span>
+            </div>
+          </a>
+
+          <!-- Simple Notepad -->
+          <a
+            href="https://mrbouquet.cc"
+            class="project-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-header">
+              <div class="project-title">Simple Notepad</div>
+              <span class="project-link-icon">→</span>
+            </div>
+            <p class="project-desc">
+              A very basic notepad that uses local storage.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Online Notepad</span>
+              <span class="tag">Open Source</span>
+            </div>
+          </a>
+
+          <!-- Midnight Score Mod -->
+          <a
+            href="https://github.com"
+            class="project-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-header">
+              <div class="project-title">Midnight Score</div>
+              <span class="project-link-icon">→</span>
+            </div>
+            <p class="project-desc">
+              A mod for Grand Theft Auto V That adds a mini heist to the game.
+            </p>
+            <div class="project-tags">
+              <span class="tag">ScriptHookV</span>
+              <span class="tag">C++</span>
+            </div>
+          </a>
+        </div>
+      </main>
+
+      <footer>&copy; 2026 Mr. Bouquet. All rights reserved.</footer>
+    </div>
+  </body>
 </html>
